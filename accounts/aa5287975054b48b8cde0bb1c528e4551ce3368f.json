@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "negara-api-2021",
+  "private_key_id": "aa5287975054b48b8cde0bb1c528e4551ce3368f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCQTl3QI99YbCOe\nNb+gn7IOnaONkzDm8izFFxLXP1nUHbJgS1rIfbodQonxNFMSqJWsEjQ3CeightZ2\nRUSXqkVEqpv+JCh2XaU6oKFwum2FYkFd+6neNkTOk+48YQiWkbYjPIKvMlh6XMHm\nTuXn3TkMxnGAl7b/mv/Izzdq55BsKIespjcxFI+3kN0bjhdAes+hbX4KuibXRPb/\nsV0ExgWzNjBNeI1eR/hkp1K6mM78RKt3DiMcCcMTp/fGHUID4CoOwyty6EBNh6t3\n2p/ClSVa9y3aMC+NRTw8N5XRYZs2P0p8rrMzBVzCGzb/9cyhndpMw1zduMynsSla\nxAwT4HHDAgMBAAECggEAB2rHvqGBYtGYGRMpKM/cfozSsb2th0lOTMkNUlvyuYjX\nOMTWwzRXIxbe8TNfy7c3jjMXVPbg6pNTpZuU1XjOe6OLRgpEvCS/D97evWUPqQnu\nUy7SwdWnPrjyx06zes29f10mWGvtiUiIPNa0UXEY9BOlFNd3c/bbC86+yfNiBHUT\nE3WkIMOCoR9MBrDG+e5wICfQv7/ZlYXcz1RZF7yV3nmWSa85eRnzyAwkpl8xZp2B\ncLzqx07fklSLaCCJReyXtmqckMZvgIQalXY2DSjB3zwyBLzgaM23wf1vi9ypWg6U\n4J2talRDfii3fMV7czj4wuKIF7KQe2oPA2gJoKIfhQKBgQDGcPbABSb6SNAnRn5f\nLiH3R79cWtWt1EI/7jd/g9RfiAhrhFuRngMJhptNXZXYD1J8lODIZAXDsO3VGrO4\nH1u0E865DvC4uFDqpzU+BBh4B5euMo79t7nA2dcC+ncl6LwahKQ0K4AvLh1EB1Xt\nSXouSXwSElR7zHTUJzkuWZZAfwKBgQC6KahG64JSAxtdaMdk4DHajBJN83xA+QVZ\nibF2v2aj7BDLHF5KufeTZ04zTZiL29DHFuSL/I3xidt7Ct7PvO675eD0ZOD5nzMZ\nAYdJF696v9r5+qCwgm5et5gzl1PZ+9uAlof3hihcGEn5ZNkog9ghhFbV5E6uQoOf\n6QW29KMsvQKBgDvQTO/wHaGPVP6hpvG1jBNnEu0ZjBLLSfTPLvdGmzr4W+FckeVA\nhZXXdvRI4yOu6qQWk/KTA5HKwMVdORKkkRWkaskpEbH8DJfOMqQww9daIoQlRSiA\nuoLApqiFKmjIz/oGRSBchFS0R6n7tBDD9woAqF8iG0j9hbF06S1pX3qtAoGAcuvO\nZuFx1MD4PqS1Go/QFtMLZbWeidlwNQLsW5ryeNT81PXRO54ruII4YzFOr1/mNVDr\ni4M/+NCafg2K2IEQe0wAn746p75gY9pusm99s3AGdPUEB5KtIamCuq57ZAC3U10Z\n2HKoLZoM6HkaGYmyfZZdqLLE44xKBwhpr7S7mp0CgYEAuiTl3p9n6QNUGRgUpnm8\ngPP5u5VYpZRWjA0BYaCV/JoOxayYk3JaE4KRj7uP2TrjiBJGcB0lGTBlKrsUsimV\niIK1QYqMDIywRtGx9KMbP50al34LwAm4dcueTndMiYWuJ+DBA+tZa4ouKmH41SyF\nlCLomqg3hZht8lH/TOZlurA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "gamer-4p2qp2lu8i1wx7mxn45xuazg@negara-api-2021.iam.gserviceaccount.com",
+  "client_id": "116464086287732222358",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gamer-4p2qp2lu8i1wx7mxn45xuazg%40negara-api-2021.iam.gserviceaccount.com"
+}
