@@ -343,7 +343,7 @@ class GoogleDriveHelper:
                                                    includeTeamDriveItems=True,
                                                    q=q,
                                                    spaces='drive',
-                                                   pageSize=200,
+                                                   pageSize=100,
                                                    fields='nextPageToken, files(id, name, mimeType,size)', corpora='allDrives', orderBy='folder, name',
                                                    pageToken=page_token).execute()
             for file in response.get('files', []):
@@ -577,7 +577,7 @@ class GoogleDriveHelper:
                                                includeTeamDriveItems=True,
                                                q=query,
                                                spaces='drive',
-                                               pageSize=200,
+                                               pageSize=100,
                                                fields='files(id, name, mimeType, size)',
                                                orderBy='name asc').execute()
         content_count = 0
