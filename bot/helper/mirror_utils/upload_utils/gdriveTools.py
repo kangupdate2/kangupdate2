@@ -383,7 +383,7 @@ class GoogleDriveHelper:
                 msg += f'\n<b>☞ Powerd by : @AT_BOTs</b>'
                 buttons = button_build.ButtonMaker()
                 if SHORTENER is not None and SHORTENER_API is not None:
-                    surl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={durl}&format=text').text
+                    surl = requests.get(f'https://{SHORTENER}/st?api={SHORTENER_API}&url={durl}&format=text').text
                     buttons.buildbutton("🌠 Drive Link 🌠", surl)
                 else:
                     buttons.buildbutton("🌠 Drive Link 🌠", durl)
