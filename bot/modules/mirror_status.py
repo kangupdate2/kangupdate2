@@ -23,6 +23,5 @@ def mirror_status(update, context):
     deleteMessage(context.bot, update.message)
 
 
-mirror_status_handler = CommandHandler(BotCommands.StatusCommand, mirror_status,
-                                       filters=CustomFilters.authorized_chat | CustomFilters.authorized_user, run_async=True)
+mirror_status_handler = CommandHandler(BotCommands.StatusCommand, mirror_status, run_async=True)
 dispatcher.add_handler(mirror_status_handler)
