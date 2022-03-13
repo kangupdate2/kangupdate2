@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# (c) YashDK [yash-dk@github]
+# (c) YashDK [yash-dk@]
 
 import os
 import time
@@ -200,20 +200,20 @@ input[type="submit"]:hover, input[type="submit"]:focus{
           src="https://telegra.ph/file/4defcc13ea6cf6e69a202.jpg"
           alt="logo"
         />
-        <a href="https://t.me/AT_BOTs"> 
-          <h2 class="name">AT_BOTs slam mirrorbot</h2>
+        <a href="https://t.me/budy_Rangerdark"> 
+          <h2 class="name">budy_Rangerdark mirror</h2>
         </a>
       </div>
       <div class="social">
-        <a href="https://github.com/ayushteke/slam_aria_mirror_bot"><i class="fab fa-github"></i></a>
-        <a href="https://t.me/AT_BOTs"><i class="fab fa-telegram"></i></a>
+        <a href="https://github.com/kangupdate2/kangupdate2"><i class="fab fa-github"></i></a>
+        <a href="https://t.me/budy_Rangerdark"><i class="fab fa-telegram"></i></a>
       </div>
     </header>
     <section>
-      <h2 class="intro">Select the files you want to download</h2>
+      <h2 class="intro">Pilih file yang ingin Anda unduh</h2>
       <form action="{form_url}" method="POST">
        {My_content}
-       <input type="submit" name="Select these files ;)">
+       <input type="submit" name="Pilih file-file ini ;)">
       </form>
     </section>
 
@@ -525,13 +525,13 @@ section span{
           src="https://telegra.ph/file/4defcc13ea6cf6e69a202.jpg"
           alt="logo"
         />
-        <a href="https://t.me/AT_BOTs">
-          <h2 class="name">AT_BOTs slam mirrorbot</h2>
+        <a href="https://t.me/budy_Rangerdark">
+          <h2 class="name">budy_Rangerdark mirror</h2>
         </a>
       </div>
       <div class="social">
-        <a href="https://github.com/ayushteke/slam_aria_mirror_bot"><i class="fab fa-github"></i></a>
-        <a href="https://t.me/AT_BOTs"><i class="fab fa-telegram"></i></a>
+        <a href="https://github.com/kangupdate2/kangupdate2"><i class="fab fa-github"></i></a>
+        <a href="https://t.me/budy_Rangerdark"><i class="fab fa-telegram"></i></a>
       </div>
     </header>
     <section>
@@ -541,13 +541,13 @@ section span{
           <input
             type="text"
             name="pin_code"
-            placeholder="Enter the code that you have got from telegram to access the torrent"
+            placeholder="Masukkan kode yang Anda dapatkan dari telegram untuk mengakses torrent"
           />
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
           <span
-            >* Dont mess around. Your download will get messed up.</
+            >* Jangan main-main. Unduhan Anda akan kacau.</
           >
     </section>
 </body>
@@ -704,7 +704,7 @@ async def set_priority(request):
 @routes.get('/')
 async def homepage(request):
 
-    return web.Response(text="<h1>See AT_BOTs slam mirrorbot <a href='https://github.com/ayushteke/slam_aria_mirror_bot'>@GitHub</a> By <a href='https://github.com/ayushteke'></a></h1>", content_type="text/html")
+    return web.Response(text="<h1>budy_Rangerdark mirror <a href='https://github.com/kangupdate2/kangupdate2'>@GitHub</a> By <a href='https://github.com/kangupdate2/kangupdate2'></a></h1>", content_type="text/html")
 
 
 async def e404_middleware(app, handler):
@@ -714,11 +714,11 @@ async def e404_middleware(app, handler):
         try:
             response = await handler(request)
             if response.status == 404:
-                return web.Response(text="<h1>404: Page not found</h2><br><h3>AT_BOTs slam mirrorbot</h3>", content_type="text/html")
+                return web.Response(text="<h1>404: Page not found</h2><br><h3budy_Rangerdark mirrorbot</h3>", content_type="text/html")
             return response
         except web.HTTPException as ex:
             if ex.status == 404:
-                return web.Response(text="<h1>404: Page not found</h2><br><h3>AT_BOTs slam mirrorbot</h3>", content_type="text/html")
+                return web.Response(text="<h1>404: Page not found</h2><br><h3>budy_Rangerdark mirrorbot</h3>", content_type="text/html")
             raise
     return middleware_handler
 
