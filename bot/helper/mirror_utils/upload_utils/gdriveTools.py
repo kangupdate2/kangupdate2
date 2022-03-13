@@ -117,7 +117,7 @@ class GoogleDriveHelper:
                                      resumable=False)
         file_metadata = {
             'name': file_name,
-            'description': 'Uploaded using AT_BOTs Mirrorbot',
+            'description': 'Uploaded by budy_RangerDark',
             'mimeType': mime_type,
         }
         if parent_id is not None:
@@ -378,12 +378,12 @@ class GoogleDriveHelper:
                     msg = self.deletefile(durl)
                     LOGGER.info(f"{msg}")
                     return "your clone has been stopped and cloned data has been deleted!", "cancelled"
-                msg += f'<b>☞ 📂Filename : </b><code>{meta.get("name")}</code>\n\n<b>Size: </b><code>{get_readable_file_size(self.transferred_size)}</code>'
-                msg += f'\n<b>☞ 🌀Type : </b><code>Folder</code>'
-                msg += f'\n<b>☞ Powerd by : @budy_RangerDark</b>'
+                msg += f'<b>Nama: </b><code>{meta.get("name")}</code>\n\n<b> ↳Size: </b><code>{get_readable_file_size(self.transferred_size)}</code>'
+                msg += f'\n<b> ↳Type: </b><code>Folder</code>'
+                msg += f'\n<b> ↳Format: </b><code>{meta.get("mimeType")}</code>'
                 buttons = button_build.ButtonMaker()
                 if SHORTENER is not None and SHORTENER_API is not None:
-                    surl = requests.get(f'https://{SHORTENER}/st?api={SHORTENER_API}&url={durl}&format=text').text
+                    surl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={durl}&format=text').text
                     buttons.buildbutton("🌠 Drive Link 🌠", surl)
                 else:
                     buttons.buildbutton("🌠 Drive Link 🌠", durl)
@@ -403,7 +403,7 @@ class GoogleDriveHelper:
                     buttons.buildbutton(f"{BUTTON_SIX_NAME}", f"{BUTTON_SIX_URL}")
             else:
                 file = self.copyFile(meta.get('id'), parent_id)
-                msg += f'<b>☞ 📂Filename : </b><code>{file.get("name")}</code>'
+                msg += f'<b>Nama: </b><code>{file.get("name")}</code>'
                 durl = self.__G_DRIVE_BASE_DOWNLOAD_URL.format(file.get("id"))
                 buttons = button_build.ButtonMaker()
                 if SHORTENER is not None and SHORTENER_API is not None:
@@ -416,8 +416,8 @@ class GoogleDriveHelper:
                 except:
                     typeee = 'File' 
                 try:
-                    msg += f'\n\n<b>☞ 📦Size : </b><code>{get_readable_file_size(int(meta.get("size")))}</code>'
-                    msg += f'\n<b>☞ 🗳Powerd by : @budy_RangerDark</b> '
+                    msg += f'\n\n<b> ↳Ukuran: </b><code>{get_readable_file_size(int(meta.get("size")))}</code>'
+                    msg += f'\n<b> ↳Format: </b><code>{file.get("mimeType")}</code>'
                 except TypeError:
                     pass
                 if INDEX_URL is not None:
@@ -546,14 +546,14 @@ class GoogleDriveHelper:
         prev_page = 0
         for content in self.telegraph_content :
             if nxt_page == 1 :
-                content += f'<b><a href="https://telegra.ph/{self.path[nxt_page]}">Next</a></b>'
+                content += f'<b><a href="https://telegra.ph/{self.path[nxt_page]}">Berikut</a></b>'
                 nxt_page += 1
             else :
                 if prev_page <= self.num_of_path:
-                    content += f'<b><a href="https://telegra.ph/{self.path[prev_page]}">Prev</a></b>'
+                    content += f'<b><a href="https://telegra.ph/{self.path[prev_page]}">Sebelum</a></b>'
                     prev_page += 1
                 if nxt_page < self.num_of_path:
-                    content += f'<b> | <a href="https://telegra.ph/{self.path[nxt_page]}">Next</a></b>'
+                    content += f'<b> | <a href="https://telegra.ph/{self.path[nxt_page]}">Berikut</a></b>'
                     nxt_page += 1
             Telegraph(access_token=telegraph_token).edit_page(path = self.path[prev_page],
                                  title = 'budy_RangerDark Mirrorsearch',
@@ -675,12 +675,15 @@ class GoogleDriveHelper:
             LOGGER.info(f"Counting: {name}")
             if drive_file['mimeType'] == self.__G_DRIVE_DIR_MIME_TYPE:
                 self.gDrive_directory(**drive_file)
-                msg += f'<b>☞ 📂Filename : </b><code>{name}</code>'
-                msg += f'\n\n<b>☞ 📦Size : </b><code>{get_readable_file_size(self.total_bytes)}</code>'
-                msg += f'\n<b>☞ 🌀Type : </b><code>Folder</code>'
-                msg += f'\n<b>☞ 🗳Powered by : @budy_RangerDark</b>'
+                msg += f'<b>Nama: </b><code>{name}</code>'
+                msg += f'\n\n<b> ↳Ukuran: </b><code>{get_readable_file_size(self.total_bytes)}</code>'
+                msg += f'\n<b> ↳Type: </b><code>Folder</code>'
+                msg += f'\n<b> ↳SubFolders: </b><code>{self.total_folders}</code>'
+                msg += f'\n<b> ↳Files: </b><code>{self.total_files}</code>'
             else:
-                msg += f'<b>☞ 📂Filename : </b><code>{name}</code>'
+                meta = self.getFileMetadata(file_id)
+                file = self.copyFile(meta.get('id'), parent_id)
+                msg += f'<b>Nama: </b><code>{name}</code>'
                 try:
                     typee = drive_file['mimeType']
                 except:
@@ -688,9 +691,9 @@ class GoogleDriveHelper:
                 try:
                     self.total_files += 1
                     self.gDrive_file(**drive_file)
-                    msg += f'\n\n<b>☞ 📦Size : </b><code>{get_readable_file_size(self.total_bytes)}</code>'
-                    msg += f'\n<b>☞ 🌀Type : </b><code>{typee}</code>'
-                    msg += f'\n<b>☞ 🗳Powered by : @budy_RangerDark</b>'
+                    msg += f'\n\n<b> ↳Ukuran: </b><code>{get_readable_file_size(self.total_bytes)}</code>'
+                    msg += f'\n<b> ↳Files: </b><code>{self.total_files}</code>'
+                    msg += f'\n<b> ↳Format: </b><code>{file.get("mimeType")}</code>'
                 except TypeError:
                     pass
         except Exception as err:
@@ -858,9 +861,9 @@ class GoogleDriveHelper:
         self.is_cancelled = True
         if self.is_downloading:
             LOGGER.info(f"Cancelling Download: {self.name}")
-            self.__listener.onDownloadError('Download stopped by user!')
+            self.__listener.onDownloadError('Unduh dihentikan oleh pengguna!')
         elif self.is_cloning:
             LOGGER.info(f"Cancelling Clone: {self.name}")
         elif self.is_uploading:
             LOGGER.info(f"Cancelling upload: {self.name}")
-            self.__listener.onUploadError('your upload has been stopped and uploaded data has been deleted!')
+            self.__listener.onUploadError('unggahan Anda telah dihentikan dan data yang diunggah telah dihapus!')
