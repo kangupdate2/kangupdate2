@@ -22,6 +22,7 @@ from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper.message_utils import *
 from bot.helper.telegram_helper import button_build
+from bot.helper.mirror_utils.upload_utils.gdriveTools import GoogleDriveHelper
 import urllib
 import pathlib
 import os
@@ -37,6 +38,7 @@ ariaDlManager = AriaDownloadHelper()
 ariaDlManager.start_listener()
 
 class MirrorListener(listeners.MirrorListeners):
+    
     def __init__(self, bot, update, pswd, isTar=False, extract=False, isZip=False, isQbit=False):
         super().__init__(bot, update)
         self.isTar = isTar
@@ -154,12 +156,12 @@ class MirrorListener(listeners.MirrorListeners):
 
     def onUploadComplete(self, link: str, size, files, folders, typ):
         with download_dict_lock:
-            msg = f'<b>☞ 📂Filename : </b><code>{download_dict[self.uid].name()}</code>\n\n<b>☞ 📦Size : </b><code>{size}</code>'
+            msg = f'<b>Nama: </b><code>{download_dict[self.uid].name()}</code>\n\n<b> ↳Ukuran: </b><code>{size}</code>'
             if os.path.isdir(f'{DOWNLOAD_DIR}/{self.uid}/{download_dict[self.uid].name()}'):
-                msg += '\n<b>☞ 🌀Type : </b><code>Folder</code>'
-                msg += f'\n<b>☞ 🗳Powerd by : @budyRangerDark</b>'
+                msg += f'\n<b> ↳Folders: </b><code>{folders}</code>'
+                msg += f'\n<b> ↳Files: </b><code>{files}</code>'
             else:
-                msg += f'\n<b>☞ 🗳Powerd by : @budyRangerDark</b>'
+                msg += f'\n<b> ↳Type: </b><code>{typ}</code>'
             buttons = button_build.ButtonMaker()
             if SHORTENER is not None and SHORTENER_API is not None:
                 surl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={link}&format=text').text
